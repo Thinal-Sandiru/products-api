@@ -15,5 +15,13 @@ public class Product {
 
     public Long getId() { return id; }
     public String getName() { return name; }
+
+//    “The name field disappeared because
+//    Spring’s JSON converter (Jackson) reads each
+//    field through its public getter, so with
+//    getName() commented out it had no way to
+//    access the private name field and silently left
+//    it out of the response.”
+
     public double getPrice() { return price; }
 }
