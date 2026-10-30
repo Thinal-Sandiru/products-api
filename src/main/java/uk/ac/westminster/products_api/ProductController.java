@@ -22,7 +22,8 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    // Product is abstract, Jackson cannot build it, so use a concrete subclass for now
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
     @DeleteMapping("/products/{id}")
